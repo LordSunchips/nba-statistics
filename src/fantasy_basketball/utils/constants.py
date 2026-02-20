@@ -1,0 +1,10 @@
+class Constants:
+    FIRST_NAME: str = "first_name"
+    LAST_NAME: str = "last_name"
+    FULL_NAME: str = "full_name"
+    POSITION: str = "position"
+    TEAM: str = "team"
+    ID: str = "id"
+    FANTASY_POSITIONS: str = "fantasy_positions"
+    INDEX: str = "index"
+    PLAYER_ID: str = "player_id"
