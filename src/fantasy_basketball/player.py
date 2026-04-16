@@ -140,10 +140,10 @@ class Player:
                 LOGGER.warning(f'Attempt {attempt + 1}/{max_retries} failed for {self.full_name} ({season}): {e}. Retrying in {backoff:.1f}s...')
                 time.sleep(backoff)
 
-    def save_player_game_data(self, seasons: List[str], rate_limit_wait_time: float = 1.0):
-        for season in seasons:
+    def save_player_game_data(self, seasons: List[str], rate_limit_wait_time: float = 1.0, rate_limit_iterations: int = 1):
+        for i, season in enumerate(seasons):
             _, source = self.get_yearly_game_data(season)
-            if source == "API":
+            if source == "API" and i % rate_limit_iterations == 0:
                 wait = rate_limit_wait_time + random.uniform(0, 1)
                 LOGGER.debug(f'Sleeping {wait:.1f}s after API call...')
                 time.sleep(wait)
