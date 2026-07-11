@@ -181,6 +181,4 @@ cython_debug/
 .cursorignore
 .cursorindexingignore
 
-player_gamelogs/
-player_info/
-assets/
+data_cache

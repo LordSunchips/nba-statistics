@@ -8,17 +8,14 @@ version = "0.1.0"
 description = "Fantasy basketball player data analysis"
 readme = "README.md"
 authors = [{ name = "Sanjay Manoj" }]
-requires-python = ">=3.11"
+requires-python = ">=3.12"
 dependencies = [
-    "nba_api==1.10.2",
-    "numpy==2.2.6",
-    "pandas==2.3.3",
-    "requests==2.32.5",
-    "tqdm==4.67.1",
-    "networkx==3.4.2",
-    "scipy>=1.11.0",
-    # Note: I removed the Jupyter/IPython internal bloat (ipykernel, etc.) 
-    # as those should be in your environment, not your package dependencies.
+    "nba_api==1.11.4",
+    "numpy==2.5.1",
+    "pandas==3.0.3",
+    "requests==2.34.2",
+    "tqdm==4.68.4",
+    "scipy>=1.14.0",
 ]
 
 [tool.setuptools.packages.find]
@@ -38,3 +35,6 @@ omit = ["tests/*"]
 [tool.coverage.report]
 show_missing = true
 skip_covered = true
+exclude_also = [
+    "if __name__ == .__main__.:",
+]
